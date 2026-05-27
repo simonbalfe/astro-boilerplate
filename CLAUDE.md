@@ -54,11 +54,13 @@ Semantic token map:
 | `border`, `border-subtle` | Borders and dividers |
 | `text-primary`, `text-secondary`, `text-muted` | Text hierarchy |
 | `action`, `action-hover`, `action-subtle`, `action-ring` | Buttons, links, interactive elements (aliases brand palette) |
-| `success-50`, `success-600` | Success states |
-| `warning-50`, `warning-600` | Warning states |
-| `info-50`, `info-600` | Info states |
+| `success`, `success-bg` | Success states (text/icon color + tinted background) |
+| `warning`, `warning-bg` | Warning states |
+| `info`, `info-bg` | Info states |
 
-Usage in markup: `bg-surface`, `text-text-primary`, `border-border`, `bg-action`, `hover:bg-action-hover`, `text-success-600`, etc.
+Naming follows the shadcn/ui convention: flat semantic names, no numbered suffixes. Status tokens use `[role]` for the accent color and `[role]-bg` for the tinted background.
+
+Usage in markup: `bg-surface`, `text-text-primary`, `border-border`, `bg-action`, `hover:bg-action-hover`, `text-success`, `bg-success-bg`, etc.
 
 To add a new semantic color: add the `--color-*` variable to the `@theme` block. Tailwind v4 auto-generates the utility classes.
 

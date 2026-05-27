@@ -23,10 +23,10 @@
   --color-action-subtle: var(--color-brand-50);
   --color-action-ring: var(--color-brand-500);
 
-  --color-success-50: oklch(0.97 0.02 155);
-  --color-success-600: oklch(0.55 0.17 155);
-  --color-warning-50: oklch(0.97 0.02 85);
-  --color-warning-600: oklch(0.55 0.17 85);
-  --color-info-50: oklch(0.97 0.01 250);
-  --color-info-600: oklch(0.55 0.17 250);
+  --color-success: oklch(0.55 0.17 155);
+  --color-success-bg: oklch(0.97 0.02 155);
+  --color-warning: oklch(0.55 0.17 85);
+  --color-warning-bg: oklch(0.97 0.02 85);
+  --color-info: oklch(0.55 0.17 250);
+  --color-info-bg: oklch(0.97 0.01 250);
 }
