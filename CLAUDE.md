@@ -37,8 +37,8 @@ pnpm deploy     # deploy to Cloudflare Workers (requires wrangler auth)
 
 GitHub Actions deploys on every push to `main`. Two secrets required in the repo:
 
-- `CLOUDFLARE_API_TOKEN` - CF API token with Workers edit permission
-- `CLOUDFLARE_ACCOUNT_ID` - CF account ID
+- `CLOUDFLARE_EMAIL` - CF account email
+- `CLOUDFLARE_API_KEY` - CF global API key
 
 ## Version pinning
 
