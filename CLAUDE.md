@@ -62,6 +62,26 @@ Usage in markup: `bg-surface`, `text-text-primary`, `border-border`, `bg-action`
 
 To add a new semantic color: add the `--color-*` variable to the `@theme` block. Tailwind v4 auto-generates the utility classes.
 
+## Adapting external designs
+
+When the user provides a screenshot, example repo, code snippet, or reference design, always adapt it to this project's design system. Never paste raw Tailwind palette colors (`indigo-600`, `gray-200`, etc.) into components.
+
+Process:
+
+1. **Extract colors** from the source material. Identify the primary/brand color, neutral scale, accent colors, and any status colors (success, warning, error, info).
+2. **Map to existing tokens** first. Check `src/styles/global.css` for a token that already covers the role (e.g. their "primary blue" maps to `action`, their "light gray background" maps to `surface-subtle`).
+3. **Add new tokens** only when no existing token fits. Add primitives if a new hue is needed, then add semantic tokens that reference the primitives. Never add one-off raw values to components.
+4. **Convert to OKLCH**. All color primitives use `oklch(lightness chroma hue)` format for perceptual uniformity.
+5. **Replace in markup**. Every class in the adapted code must use token-based utilities (`bg-surface`, `text-action`, `border-border`) not raw palette names.
+
+What counts as a new token vs. using an existing one:
+
+- Different shade of the brand color for a new interactive state: add to the `action-*` family
+- A completely new accent hue (e.g. design uses orange as a secondary brand color): add new primitives (`accent-*`) and semantic tokens
+- A slightly different gray: use the closest existing `surface`/`border`/`text` token. Do not add a new token for every gray shade.
+
+If the source uses a color with no clear semantic role, ask the user what it represents before adding a token.
+
 ## Deployment
 
 GitHub Actions deploys on every push to `main`. Two secrets required in the repo:
