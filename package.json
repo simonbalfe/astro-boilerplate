@@ -1,0 +1,31 @@
+{
+  "name": "astro-boilerplate",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "unused": "knip",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.5.5",
+    "astro": "^6.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@biomejs/biome": "^1.9.0",
+    "@tailwindcss/vite": "~4.1.18",
+    "knip": "^5.0.0",
+    "tailwindcss": "~4.1.18",
+    "typescript": "^5.8.0",
+    "wrangler": "^4.95.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@biomejs/biome", "esbuild", "sharp", "workerd"]
+  }
+}
