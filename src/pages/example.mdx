@@ -1,0 +1,42 @@
+---
+layout: ../layouts/BaseLayout.astro
+title: MDX Example
+---
+
+import Callout from "../components/Callout.astro";
+
+<div class="mx-auto max-w-2xl px-6 py-16 prose prose-gray">
+
+# MDX Example Page
+
+This page is written in **MDX**. It supports standard Markdown with embedded Astro components.
+
+## Using components
+
+<Callout type="info">
+  This is an info callout rendered from an Astro component inside MDX.
+</Callout>
+
+<Callout type="warning">
+  This is a warning callout. MDX lets you mix Markdown and components freely.
+</Callout>
+
+<Callout type="success">
+  If you can see these styled callouts, MDX is working correctly.
+</Callout>
+
+## Code blocks
+
+```ts
+const message: string = "Astro + MDX + Tailwind";
+console.log(message);
+```
+
+## Lists
+
+- Astro 6 with strict TypeScript
+- Tailwind CSS v4 via Vite plugin
+- MDX for rich content pages
+- Cloudflare Workers deployment
+
+</div>

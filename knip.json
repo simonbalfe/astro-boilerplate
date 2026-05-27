@@ -5,5 +5,5 @@
   "astro": {
     "config": ["astro.config.mjs"]
   },
-  "ignoreDependencies": ["tailwindcss"]
+  "ignoreDependencies": ["tailwindcss", "@tailwindcss/typography"]
 }
