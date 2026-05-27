@@ -1,2 +1,32 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-50: oklch(0.97 0.01 265);
+  --color-brand-100: oklch(0.93 0.03 265);
+  --color-brand-500: oklch(0.55 0.24 265);
+  --color-brand-600: oklch(0.48 0.24 265);
+  --color-brand-700: oklch(0.42 0.24 265);
+
+  --color-surface: #ffffff;
+  --color-surface-subtle: oklch(0.98 0 0);
+
+  --color-border: oklch(0.91 0 0);
+  --color-border-subtle: oklch(0.95 0 0);
+
+  --color-text-primary: oklch(0.15 0 0);
+  --color-text-secondary: oklch(0.4 0 0);
+  --color-text-muted: oklch(0.55 0 0);
+
+  --color-action: var(--color-brand-600);
+  --color-action-hover: var(--color-brand-700);
+  --color-action-subtle: var(--color-brand-50);
+  --color-action-ring: var(--color-brand-500);
+
+  --color-success-50: oklch(0.97 0.02 155);
+  --color-success-600: oklch(0.55 0.17 155);
+  --color-warning-50: oklch(0.97 0.02 85);
+  --color-warning-600: oklch(0.55 0.17 85);
+  --color-info-50: oklch(0.97 0.01 250);
+  --color-info-600: oklch(0.55 0.17 250);
+}

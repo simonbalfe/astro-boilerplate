@@ -7,9 +7,9 @@ const links = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+<nav class="border-b border-border bg-surface/80 backdrop-blur-sm sticky top-0 z-50">
   <div class="mx-auto max-w-3xl px-6 flex items-center justify-between h-14">
-    <a href="/" class="text-sm font-bold tracking-tight text-gray-900">Astro Boilerplate</a>
+    <a href="/" class="text-sm font-bold tracking-tight text-text-primary">Astro Boilerplate</a>
     <div class="flex items-center gap-6">
       {links.map(({ href, label }) => (
         <a
@@ -17,8 +17,8 @@ const currentPath = Astro.url.pathname;
           class:list={[
             "text-sm transition-colors",
             currentPath === href || (href !== "/" && currentPath.startsWith(href))
-              ? "text-indigo-600 font-medium"
-              : "text-gray-500 hover:text-gray-900",
+              ? "text-brand-600 font-medium"
+              : "text-text-muted hover:text-text-primary",
           ]}
         >
           {label}

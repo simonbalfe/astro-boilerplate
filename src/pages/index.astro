@@ -3,10 +3,72 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Astro Boilerplate">
-  <main class="mx-auto max-w-2xl px-4 py-16">
-    <h1 class="text-4xl font-bold tracking-tight">Astro Boilerplate</h1>
-    <p class="mt-4 text-lg text-gray-600">
-      Astro 6 + Tailwind CSS v4. Edit <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm font-mono">src/pages/index.astro</code> to get started.
-    </p>
+  <main class="mx-auto max-w-3xl px-6 py-16 space-y-12">
+    <section>
+      <h1 class="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 bg-clip-text text-transparent">
+        Astro Boilerplate
+      </h1>
+      <p class="mt-4 text-lg text-text-muted max-w-xl">
+        Astro 6 + Tailwind CSS v4 + Cloudflare Workers. If the styles below render correctly, Tailwind is working.
+      </p>
+    </section>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="rounded-2xl bg-action-subtle p-6 shadow-sm border border-brand-100 hover:shadow-md transition-shadow">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-action">Spacing</h3>
+        <p class="mt-2 text-text-secondary text-sm leading-relaxed">Padding, margin, gap, and space-y all working.</p>
+      </div>
+      <div class="rounded-2xl bg-success-50 p-6 shadow-sm border border-success-600/20 hover:shadow-md transition-shadow">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-success-600">Colors</h3>
+        <p class="mt-2 text-text-secondary text-sm leading-relaxed">Background, text, and border colors rendering.</p>
+      </div>
+      <div class="rounded-2xl bg-warning-50 p-6 shadow-sm border border-warning-600/20 hover:shadow-md transition-shadow">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-warning-600">Typography</h3>
+        <p class="mt-2 text-text-secondary text-sm leading-relaxed">Font sizes, weights, tracking, and leading.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-wrap gap-3">
+      <span class="inline-flex items-center rounded-full bg-info-50 px-3 py-1 text-xs font-medium text-info-600 ring-1 ring-info-600/10">Badge</span>
+      <span class="inline-flex items-center rounded-full bg-warning-50 px-3 py-1 text-xs font-medium text-warning-600 ring-1 ring-warning-600/10">Alert</span>
+      <span class="inline-flex items-center rounded-full bg-success-50 px-3 py-1 text-xs font-medium text-success-600 ring-1 ring-success-600/10">Success</span>
+      <span class="inline-flex items-center rounded-full bg-action-subtle px-3 py-1 text-xs font-medium text-action ring-1 ring-action/10">Info</span>
+    </section>
+
+    <section class="space-y-4">
+      <button class="rounded-lg bg-action px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-action-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-ring active:scale-95 transition-all">
+        Primary Button
+      </button>
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 shadow-lg"></div>
+        <div class="h-12 w-12 rounded-lg bg-gradient-to-br from-success-600 to-success-600 shadow-lg rotate-12"></div>
+        <div class="h-12 w-12 rounded-lg bg-gradient-to-br from-warning-600 to-warning-600 shadow-lg -skew-x-6"></div>
+        <div class="h-12 w-12 rounded-full bg-gradient-to-br from-info-600 to-info-600 shadow-lg ring-4 ring-info-50"></div>
+      </div>
+    </section>
+
+    <section class="rounded-xl border border-border overflow-hidden">
+      <div class="bg-surface-subtle px-4 py-3 border-b border-border">
+        <h3 class="text-sm font-semibold text-text-primary">Responsive Table</h3>
+      </div>
+      <div class="divide-y divide-border-subtle">
+        <div class="flex justify-between px-4 py-3 text-sm">
+          <span class="font-medium text-text-primary">Flexbox</span>
+          <span class="text-success-600 font-mono text-xs bg-success-50 px-2 py-0.5 rounded">working</span>
+        </div>
+        <div class="flex justify-between px-4 py-3 text-sm">
+          <span class="font-medium text-text-primary">Grid</span>
+          <span class="text-success-600 font-mono text-xs bg-success-50 px-2 py-0.5 rounded">working</span>
+        </div>
+        <div class="flex justify-between px-4 py-3 text-sm">
+          <span class="font-medium text-text-primary">Transitions</span>
+          <span class="text-success-600 font-mono text-xs bg-success-50 px-2 py-0.5 rounded">working</span>
+        </div>
+        <div class="flex justify-between px-4 py-3 text-sm">
+          <span class="font-medium text-text-primary">Transforms</span>
+          <span class="text-success-600 font-mono text-xs bg-success-50 px-2 py-0.5 rounded">working</span>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>
