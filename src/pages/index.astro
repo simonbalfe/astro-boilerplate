@@ -1,74 +1,48 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Counter from "../components/Counter";
 ---
 
 <BaseLayout title="Astro Boilerplate">
-  <main class="mx-auto max-w-3xl px-6 py-16 space-y-12">
-    <section>
-      <h1 class="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent">
-        Astro Boilerplate
+  <main class="mx-auto max-w-2xl px-6 py-20 space-y-12">
+    <section class="space-y-3">
+      <h1 class="text-4xl font-bold tracking-tight text-foreground">
+        Project shell
       </h1>
-      <p class="mt-4 text-lg text-muted-foreground max-w-xl">
-        Astro 6 + Tailwind CSS v4 + Cloudflare Workers. If the styles below render correctly, Tailwind is working.
+      <p class="text-muted-foreground">
+        Astro 6 + Tailwind v4 + React 19 + MDX + Cloudflare Workers. Pre-wired with the full shadcn token system, a working React island, and an MDX blog scaffold. Fork and build.
       </p>
     </section>
 
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="rounded-2xl bg-accent p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-accent-foreground">Spacing</h3>
-        <p class="mt-2 text-muted-foreground text-sm leading-relaxed">Padding, margin, gap, and space-y all working.</p>
+    <section class="space-y-2">
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Design tokens</h2>
+      <div class="grid grid-cols-4 gap-2">
+        <div class="aspect-square rounded-md bg-primary" title="primary"></div>
+        <div class="aspect-square rounded-md bg-success" title="success"></div>
+        <div class="aspect-square rounded-md bg-warning" title="warning"></div>
+        <div class="aspect-square rounded-md bg-destructive" title="destructive"></div>
       </div>
-      <div class="rounded-2xl bg-success/10 p-6 shadow-sm border border-success/20 hover:shadow-md transition-shadow">
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-success">Colors</h3>
-        <p class="mt-2 text-muted-foreground text-sm leading-relaxed">Background, text, and border colors rendering.</p>
-      </div>
-      <div class="rounded-2xl bg-warning/10 p-6 shadow-sm border border-warning/20 hover:shadow-md transition-shadow">
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-warning">Typography</h3>
-        <p class="mt-2 text-muted-foreground text-sm leading-relaxed">Font sizes, weights, tracking, and leading.</p>
-      </div>
+      <p class="text-sm text-muted-foreground">
+        Edit <code class="rounded bg-muted px-1.5 py-0.5">src/styles/global.css</code> to rebrand. Run <code class="rounded bg-muted px-1.5 py-0.5">/brand-guidelines</code> for the token map.
+      </p>
     </section>
 
-    <section class="flex flex-wrap gap-3">
-      <span class="inline-flex items-center rounded-full bg-info/10 px-3 py-1 text-xs font-medium text-info ring-1 ring-info/10">Badge</span>
-      <span class="inline-flex items-center rounded-full bg-warning/10 px-3 py-1 text-xs font-medium text-warning ring-1 ring-warning/10">Alert</span>
-      <span class="inline-flex items-center rounded-full bg-success/10 px-3 py-1 text-xs font-medium text-success ring-1 ring-success/10">Success</span>
-      <span class="inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground ring-1 ring-border">Info</span>
+    <section class="space-y-2">
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">React island</h2>
+      <Counter client:load initial={0} />
+      <p class="text-sm text-muted-foreground">
+        <code class="rounded bg-muted px-1.5 py-0.5">.tsx</code> in <code class="rounded bg-muted px-1.5 py-0.5">src/components/</code>, mounted with <code class="rounded bg-muted px-1.5 py-0.5">client:load</code>.
+      </p>
     </section>
 
-    <section class="space-y-4">
-      <button class="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-95 transition-all">
-        Primary Button
-      </button>
-      <div class="flex items-center gap-4">
-        <div class="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-primary/60 shadow-lg"></div>
-        <div class="h-12 w-12 rounded-lg bg-success shadow-lg rotate-12"></div>
-        <div class="h-12 w-12 rounded-lg bg-warning shadow-lg -skew-x-6"></div>
-        <div class="h-12 w-12 rounded-full bg-info shadow-lg ring-4 ring-info/10"></div>
-      </div>
-    </section>
-
-    <section class="rounded-xl border border-border overflow-hidden">
-      <div class="bg-muted px-4 py-3 border-b border-border">
-        <h3 class="text-sm font-semibold text-foreground">Responsive Table</h3>
-      </div>
-      <div class="divide-y divide-border">
-        <div class="flex justify-between px-4 py-3 text-sm">
-          <span class="font-medium text-foreground">Flexbox</span>
-          <span class="text-success font-mono text-xs bg-success/10 px-2 py-0.5 rounded">working</span>
-        </div>
-        <div class="flex justify-between px-4 py-3 text-sm">
-          <span class="font-medium text-foreground">Grid</span>
-          <span class="text-success font-mono text-xs bg-success/10 px-2 py-0.5 rounded">working</span>
-        </div>
-        <div class="flex justify-between px-4 py-3 text-sm">
-          <span class="font-medium text-foreground">Transitions</span>
-          <span class="text-success font-mono text-xs bg-success/10 px-2 py-0.5 rounded">working</span>
-        </div>
-        <div class="flex justify-between px-4 py-3 text-sm">
-          <span class="font-medium text-foreground">Transforms</span>
-          <span class="text-success font-mono text-xs bg-success/10 px-2 py-0.5 rounded">working</span>
-        </div>
-      </div>
+    <section class="space-y-2">
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Blog</h2>
+      <a href="/blog" class="inline-flex items-center rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground hover:bg-accent transition-colors">
+        Open blog →
+      </a>
+      <p class="text-sm text-muted-foreground">
+        Content collection at <code class="rounded bg-muted px-1.5 py-0.5">src/content/blog/</code>. Drop in MDX files, they render at <code class="rounded bg-muted px-1.5 py-0.5">/blog/[slug]</code>.
+      </p>
     </section>
   </main>
 </BaseLayout>

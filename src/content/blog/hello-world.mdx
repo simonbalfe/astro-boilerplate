@@ -1,0 +1,28 @@
+---
+title: Hello, world
+description: First post in the blog scaffold.
+pubDate: 2026-05-28
+---
+
+import Callout from "../../components/Callout.astro";
+
+This is an MDX post. Standard markdown works, plus you can import and use Astro components inline.
+
+## Components in posts
+
+<Callout type="info">
+  Callouts, code blocks, embedded charts — anything that's an Astro component.
+</Callout>
+
+## Code
+
+```ts
+const greeting: string = "hello from MDX";
+console.log(greeting);
+```
+
+## Lists
+
+- Frontmatter is validated against the schema in `src/content.config.ts`.
+- Each `.mdx` file in `src/content/blog/` becomes a post at `/blog/<slug>`.
+- Add `draft: true` to hide a post from the index.
